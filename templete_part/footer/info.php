@@ -1,4 +1,4 @@
-<?php $footer_bg = "dark";
+<?php $footer_bg = _themeName_sanitize_footer_bg(get_theme_mod("_themeName_footer_bg","dark"));
 $site_info = get_theme_mod("_themeName_site_info", "");
 ?>
 

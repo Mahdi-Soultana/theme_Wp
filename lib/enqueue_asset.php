@@ -4,6 +4,8 @@ function _themeName_assets(){
 
     wp_enqueue_style("_themeName_StyleSheet",get_template_directory_uri() ."/dist/asset/src/css/bundle.css"
     ,NULL,microtime(),"all");
+    include(get_template_directory()."./lib/general_style.php");
+    wp_add_inline_style("_themeName_StyleSheet",$inline_style);
     
     wp_enqueue_script( "_themeName_Main_Js", get_template_directory_uri() .'/dist/asset/js/bundle.js', array("jquery"),microtime(), true );
     

@@ -14,10 +14,13 @@
         <div class="c-header">
             <div class="o-container">
                 <div class="c-header__logo" style=" display:flex; ">
+                <?php if(has_custom_logo()){
+                    echo "<div style='flex-basis: 50%;' >". get_custom_logo() ."</div>";
+                }else{?>
                     <a style="flex-basis: 50%;  border-bottom: none;" href="<?php echo esc_url(home_url("/")); ?>" class="c-header__blogname">
                         <?php esc_html(bloginfo("name")) ?>
                     </a>
-
+                <?php }?>
                     <div style="flex-basis: 30%; text-align:right">
                         <?php get_search_form(true); ?>
                     </div>
