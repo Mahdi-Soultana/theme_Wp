@@ -20,7 +20,15 @@ while (have_posts()) {
             <?php the_excerpt() ?>
         </div>
         <a class="c-post__readmore" href="<?php echo get_the_permalink() ?>" title="<?php the_title_attribute() ?>"> Read More <span class="u-screen-reader-text">About <?php the_title(); ?></span></a>
+        <div>
+
+            <?php
+            if (current_user_can("delete_post", get_the_ID())) {
+            echo _themeName_delete_post(); 
+            }?>
+        </div>
     </article>
+
 
 <?php
 }

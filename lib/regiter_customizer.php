@@ -22,6 +22,7 @@ $wp_customize->add_section('_themeName_general_setting', array(
  $wp_customize->add_setting('_themeName_accent_color',"_themeName_accent_color",array(
     "default" => "#20ddae",
     "sanitize_callback" => "sanitize_hex_color",
+     
     
 ));
  

@@ -26,7 +26,7 @@ const paths = {
         dist: "./dist/asset/images"
     },
     script: {
-        src: ['./asset/src/js/bundle.js', './asset/src/js/admin.js'],
+        src: ['./asset/src/js/bundle.js', './asset/src/js/admin.js', './asset/src/js/customize-preview.js'],
         dist: './dist/asset/js'
     }
     ,
@@ -112,7 +112,7 @@ export const scripts = () => {
 
 export const compress = () => {
     return gulp.src(paths.package.src)
-        .pipe(replace("_themeName",info.name))
+        .pipe(replace("_themeName", info.name))
         .pipe(zip(`${info.name}.zip`))
         .pipe(gulp.dest(paths.package.dist));
 }
@@ -126,7 +126,7 @@ export const watch = () => {
 }
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), server, watch);
 export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
-export const bundle = gulp.series(build,compress);
+export const bundle = gulp.series(build, compress);
 
 export default dev;
 // export default hello;
